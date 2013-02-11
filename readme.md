@@ -9,7 +9,7 @@ This git repo contains a [Vagrant][] environment for preparing a proof of concep
 
 It installs Apache and the `shibboleth.x86_64` RPM from http://download.opensuse.org/repositories/security:/shibboleth/RHEL_6/
 
-Then in configures /etc/shibboleth/shibboleth2.xml and restarts Apache and `shibd` per https://www.testshib.org/configure.html
+Then it configures `/etc/shibboleth/shibboleth2.xml` and restarts Apache and `shibd` per https://www.testshib.org/configure.html
 
 **You will need to register with TestShib** by following https://www.testshib.org/metadata.html
 
