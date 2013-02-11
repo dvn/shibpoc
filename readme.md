@@ -61,11 +61,6 @@ The answer is in `/etc/httpd/conf.d/shib.conf`:
       require valid-user
     </Location>
 
-## See also
-
-- http://shibboleth.net/pipermail/users/2013-February/008056.html
-- https://redmine.hmdc.harvard.edu/issues/2657
-
 ## HTTP headers from login test
 
 Below are the HTTP headers from gaining access to https://dvn-vm2.hmdc.harvard.edu/secure/ as described above.
@@ -333,3 +328,8 @@ Here are the complete headers:
     Connection: close
     Content-Type: text/html; charset=UTF-8
     ----------------------------------------------------------
+
+## See also
+
+- http://shibboleth.net/pipermail/users/2013-February/008056.html
+- https://redmine.hmdc.harvard.edu/issues/2657
