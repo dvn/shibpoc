@@ -60,4 +60,9 @@ class shibpoc {
     subscribe => File['/etc/sysconfig/iptables'],
   }
 
+  # FIXME: Does Shibboleth work with SELinux?
+  exec { 'disable SELinux':
+    command => '/usr/sbin/selinuxenabled && /usr/sbin/setenforce Permissive || :',
+  }
+
 }
