@@ -1,5 +1,9 @@
 class shibpoc {
 
+  file { '/var/www/html/index.html' :
+    content => '<a href="https://github.com/dvn/shibpoc">https://github.com/dvn/shibpoc</a>',
+  }
+
   file { '/var/www/html/secure' :
     ensure => directory,
     owner  => 'root',
