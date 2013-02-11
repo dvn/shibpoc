@@ -52,4 +52,5 @@ https://dvn-vm2.hmdc.harvard.edu/secure/ should redirect you to https://idp.test
 
 ## See also
 
-See also https://redmine.hmdc.harvard.edu/issues/2657
+- http://shibboleth.net/pipermail/users/2013-February/008056.html
+- https://redmine.hmdc.harvard.edu/issues/2657
