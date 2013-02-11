@@ -11,6 +11,17 @@ class shibpoc {
     require => File['/var/www/html/secure'],
   }
 
+  file { '/var/www/html/open' :
+    ensure => directory,
+    owner  => 'root',
+    mode   => '0755',
+  }
+
+  file { '/var/www/html/open/index.html' :
+    content => 'Wide open area',
+    require => File['/var/www/html/open'],
+  }
+
   file { '/usr/local/dvn/sbin/dvn-puppet-apply':
     source  => 'puppet:///modules/shibpoc/usr/local/dvn/sbin/dvn-puppet-apply',
     mode    => '0755',
