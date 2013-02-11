@@ -50,6 +50,17 @@ https://dvn-vm2.hmdc.harvard.edu/open/ should say "Wide open area"
 
 https://dvn-vm2.hmdc.harvard.edu/secure/ should redirect you to https://idp.testshib.org/idp/Authn/UserPassword where you can log in with a username and password of "myself" and which point your browser should take you back to https://dvn-vm2.hmdc.harvard.edu/secure/ where you'll see the text "Secure area" (which is the contents of `/var/www/html/secure/index.html`). 
 
+Now, you might be wondering what makes that https://dvn-vm2.hmdc.harvard.edu/secure/ URL special... why Shibboleth is involved in that URL but not https://dvn-vm2.hmdc.harvard.edu/open/
+
+The answer is in `/etc/httpd/conf.d/shib.conf`:
+
+    [root@dvn-vm2 ~]# tail -5 /etc/httpd/conf.d/shib.conf 
+    <Location /secure>
+      AuthType shibboleth
+      ShibRequestSetting requireSession 1
+      require valid-user
+    </Location>
+
 ## See also
 
 - http://shibboleth.net/pipermail/users/2013-February/008056.html
