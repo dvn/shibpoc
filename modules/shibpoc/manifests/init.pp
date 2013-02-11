@@ -47,4 +47,17 @@ class shibpoc {
     enable    => true,
   }
 
+  file { '/etc/sysconfig/iptables':
+    source => 'puppet:///modules/shibpoc/etc/sysconfig/iptables',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0600',
+  }
+
+  service { 'iptables':
+    ensure    => running,
+    enable    => true,
+    subscribe => File['/etc/sysconfig/iptables'],
+  }
+
 }
