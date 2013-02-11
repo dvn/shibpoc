@@ -68,7 +68,21 @@ The answer is in `/etc/httpd/conf.d/shib.conf`:
 
 ## HTTP headers from login test
 
-These are the HTTP headers from gaining acces to  https://dvn-vm2.hmdc.harvard.edu/secure/  as described above:
+Below are the HTTP headers from gaining access to https://dvn-vm2.hmdc.harvard.edu/secure/ as described above.
+
+In short, there is a chain of redirection...
+
+- https://dvn-vm2.hmdc.harvard.edu/secure/ 
+- https://idp.testshib.org/idp/profile/SAML2/Redirect/SSO?SAMLRequest...(snip)
+- https://idp.testshib.org:443/idp/AuthnEngine
+- https://idp.testshib.org:443/idp/Authn/UserPassword
+
+... and at this point you login in with myself/myself. Then the HTTP transaction completes with:
+
+- https://idp.testshib.org:443/idp/profile/SAML2/Redirect/SSO
+- https://dvn-vm2.hmdc.harvard.edu/secure/
+
+Here are the complete headers:
 
     https://dvn-vm2.hmdc.harvard.edu/secure/
     GET /secure/ HTTP/1.1
