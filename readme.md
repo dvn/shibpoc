@@ -75,6 +75,7 @@ In short, there is a chain of redirection...
 ... and at this point you login in with myself/myself. Then the HTTP transaction completes with:
 
 - https://idp.testshib.org:443/idp/profile/SAML2/Redirect/SSO
+- https://dvn-vm2.hmdc.harvard.edu/Shibboleth.sso/SAML2/POST
 - https://dvn-vm2.hmdc.harvard.edu/secure/
 
 Here are the complete headers:
