@@ -7,6 +7,8 @@ Vagrant::Config.run do |config|
 
   #config.vm.network :hostonly, "33.33.33.10"
   #config.vm.forward_port 80, 9999
+  config.vm.forward_port 8080, 9999
+  config.vm.share_folder "downloads", "/downloads", "downloads"
 
   config.vm.customize ["modifyvm", :id, "--name", "shibpoc", "--memory", 1024]
 

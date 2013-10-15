@@ -9,11 +9,11 @@ This git repo contains a [Vagrant][] environment for preparing a proof of concep
 
 It installs Apache and the `shibboleth.x86_64` RPM from http://download.opensuse.org/repositories/security:/shibboleth/RHEL_6/
 
-Then it configures `/etc/shibboleth/shibboleth2.xml` and restarts Apache and `shibd` per https://www.testshib.org/configure.html
+Then it configures `/etc/shibboleth/shibboleth2.xml` and restarts Apache and `shibd` per http://testshib.org/configure.html
 
-**You will need to register with TestShib** by following https://www.testshib.org/metadata.html
+**You will need to register with TestShib** by following http://testshib.org/register.html
 
-Then, you can start testing per https://www.testshib.org/test.html 
+Then, you can start testing per http://testshib.org/test.html
 
 ## Example deployment to dvn-vm2.hmdc.harvard.edu
 
@@ -44,7 +44,7 @@ From a client machine, we download the metadata...
 
     [pdurbin@tabby tmp]$ curl -s -k https://dvn-vm2.hmdc.harvard.edu/Shibboleth.sso/Metadata > dvn-vm2.hmdc.harvard.edu
 
-... and then upload is via https://www.testshib.org/metadata.html
+... and then upload is via http://testshib.org/register.html
 
 https://dvn-vm2.hmdc.harvard.edu/open/ should say "Wide open area"
 
