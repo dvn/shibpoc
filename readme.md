@@ -50,6 +50,24 @@ https://dvn-vm2.hmdc.harvard.edu/open/ should say "Wide open area"
 
 https://dvn-vm2.hmdc.harvard.edu/secure/ should redirect you to https://idp.testshib.org/idp/Authn/UserPassword where you can log in with a username and password of "myself" and which point your browser should take you back to https://dvn-vm2.hmdc.harvard.edu/secure/ where you'll see the text "Secure area" (which is the contents of `/var/www/html/secure/index.html`). 
 
+At this point, having authenticated with the TestShib Idp with "myself", you should be able to visit https://dvn-vm2.hmdc.harvard.edu/Shibboleth.sso/Session to see something like the following:
+
+    Miscellaneous
+    Session Expiration (barring inactivity): 478 minute(s)
+    Client Address: 140.247.0.43
+    SSO Protocol: urn:oasis:names:tc:SAML:2.0:protocol
+    Identity Provider: https://idp.testshib.org/idp/shibboleth
+    Authentication Time: 2013-11-07T14:22:51.149Z
+    Authentication Context Class: urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
+    Authentication Context Decl: (none)
+
+    Attributes
+    affiliation: Member@testshib.org;Staff@testshib.org
+    entitlement: urn:mace:dir:entitlement:common-lib-terms
+    eppn: myself@testshib.org
+    persistent-id: https://idp.testshib.org/idp/shibboleth!https://dvn-vm2.hmdc.harvard.edu/shibboleth!r6xcY8nP2sLOi+ugf8GLtz3wQws=
+    unscoped-affiliation: Member;Staff
+
 Now, you might be wondering what makes that https://dvn-vm2.hmdc.harvard.edu/secure/ URL special... why Shibboleth is involved in that URL but not https://dvn-vm2.hmdc.harvard.edu/open/
 
 The answer is in `/etc/httpd/conf.d/shib.conf`:
